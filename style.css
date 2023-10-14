@@ -11,43 +11,51 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     overflow: hidden;
-    background: #dcd9cd;
+    background-color: #000000;
+    color: white;
 }
 
-.nav>ul {
-    position: relative;
-    display: flex;
-    bottom: 250px;
-    justify-content: space-evenly;
+nav{
+    position: fixed;
+    top: 30px;
+    width: 100%;
+    background-color: #00ff00;
+    border-radius: 50px;
+    height: 80px;
 }
 
-.nav ul li {
-    list-style: none;
+.menu {
+    padding: 25px;
+    list-style: none; 
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 34px; 
     text-align: center;
 }
 
-.nav ul li a {
-    color: #333;
+#userName{
+    width: 288px;
+}
+
+.menu li a { 
+    float: left; 
+    color: #000;
     text-decoration: none;
-    font-size: 22px;
     padding: 5px 20px;
-    display: inline-flex;
-    font-weight: 700;
     transition: 0.5s;
 }
 
-.nav ul:hover li a {
+.menu:hover li a {
     color: #0002;
 }
 
-.nav ul li:hover a {
+.menu li:hover a {
     color: #000;
     background: transparent;
 }
 
-.nav ul li a:before {
+.menu li a:before {
     content: "";
     position: absolute;
     top: 50%;
@@ -56,7 +64,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 5em;
+    font-size: 86px;
     color: rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     z-index: -1;
@@ -65,7 +73,7 @@ body {
     transition: left 0.5s;
 }
 
-.nav ul li a:hover:before {
+.menu li a:hover:before {
     content: attr(data-text);
     opacity: 1;
     left: 50%;
@@ -74,31 +82,42 @@ body {
     height: 1800px;
 }
 
-.nav ul li:nth-child(6n + 1) a:before {
+.menu li:nth-child(6n + 1) a:before {
     background: #0470fe;
 }
 
-.nav ul li:nth-child(6n + 2) a:before {
+.menu li:nth-child(6n + 2) a:before {
     background: #ff7675;
 }
 
-.nav ul li:nth-child(6n + 3) a:before {
+.menu li:nth-child(6n + 3) a:before {
     background: #1582fe;
 }
 
-.nav ul li:nth-child(6n + 4) a:before {
+.menu li:nth-child(6n + 4) a:before {
     background: #a29bfe;
 }
 
-.nav ul li:nth-child(6n + 5) a:before {
+.menu li:nth-child(6n + 5) a:before {
     background: #fd79a8;
 }
 
-.nav ul li:nth-child(6n + 6) a:before {
+.menu li:nth-child(6n + 6) a:before {
     background: #ffeaa7;
 }
 
-.menu {
+.menu li:nth-child(6n + 7) a:before {
+    background: #34ec34;
+}
+
+.menu li:nth-child(6n + 8) a:before {
+    background: #9e1881;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    float: right;
     --s: 30px;
     /* control the size */
     --c: black;
@@ -122,18 +141,16 @@ body {
     position: relative;
     clip-path: inset(0 25%);
     -webkit-mask: linear-gradient(90deg, #0000, #000 25% 75%, #0000);
-    cursor: pointer;
     transition:
         background-position .3s var(--_s, .3s),
         clip-path 0s var(--_s, .6s);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    display: none;
 }
 
-.menu:before,
-.menu:after {
+.hamburger:before,
+.hamburger:after {
     content: "";
     position: absolute;
     border-radius: var(--s);
@@ -142,21 +159,21 @@ body {
     transition: transform .3s calc(.3s - var(--_s, .3s));
 }
 
-.menu:checked {
+.hamburger:checked {
     clip-path: inset(0);
     --_p: calc(-1*var(--s));
     --_s: 0s;
 }
 
-.menu:checked:before {
+.hamburger:checked:before {
     transform: rotate(45deg);
 }
 
-.menu:checked:after {
+.hamburger:checked:after {
     transform: rotate(-45deg);
 }
 
-.menu:focus-visible {
+.hamburger:focus-visible {
     clip-path: none;
     -webkit-mask: none;
     border: none;
@@ -164,44 +181,58 @@ body {
     outline-offset: 5px;
 }
 
-@media (max-width: 910px) {
-    .nav {
-        position: relative;
-        bottom: 280px;
-        left: 280px
-    }
+canvas {
+	-webkit-tap-highlight-color: transparent;
+	tap-highlight-color: transparent;
+	-webkit-user-select: none;
+	user-select: none;
+	cursor: pointer;
+}
 
-    .nav>ul {
+
+@media (max-width: 1104px) {
+    .menu{
         display: none;
     }
 
-    .menu {
-        display: block;
+    .hamburger {
+        display: flex;
+        margin-top: 24px;
     }
 
-    .nav.open>ul {
+    .menu.open{
         display: block;
         position: absolute;
         right: 0%;
-        top: 50px;
+        margin-top: 55px; 
     }
 
-    .nav.open>ul>li>a {
-        display: block;
+    #userName{
+        width: fit-content;
+    }
+
+    .menu.open li{
+        float: right;
+        display: flex;
+        flex-direction: column;
         margin-top: 20px;
-        padding: 0 50px;
+        padding: 20px 30px;
+        background-color: #00ff00;
+        width: 75%;
+        border-radius: 50px;
+        text-align: center;
     }
 
-    .nav ul li a:before {
-        font-size: 39px;
-        padding-right: 300px;
+    .menu li a:before {
+        font-size: 25px;
         transition: left 0.5s;
-        transform: translate(-507px, -53%);
+        transform: translate(-421px, -92%);
     }
 
-    .nav ul li a:hover:before {
+    .menu li a:hover:before {
+        letter-spacing: 0px;
         width: 800px;
         height: 1000px;
     }
-
 }
+    
