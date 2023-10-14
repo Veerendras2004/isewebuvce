@@ -4,13 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UVCE ISE</title>
+  <title>UVCE ISE 26</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <nav class="nav">
-    <ul>
+  <nav>
+    <ul class="menu">
+      <li><a href="#userName" data-text="WELCOME TO UVCE ISE" id="userName"></a></li>
       <li><a href="#home" data-text="HOME">HOME</a></li>
       <li><a href="#fam" data-text="FAM">FAM</a></li>
       <li><a href="#gallery" data-text="GALLERY">GALLERY</a></li>
@@ -19,17 +20,10 @@
       <li><a href="#achievements" data-text="ACHIEVEMENTS">ACHIEVEMENTS</a></li>
       <li><a href="#contactUs" data-text="CONTACT US">CONTACT US</a></li>
     </ul>
-    <input type="checkbox" role="button" aria-label="Display the menu" class="menu"/>
+    <input type="checkbox" role="button" aria-label="Display the menu" class="hamburger">
   </nav>
-  <script>
-    const menu = document.querySelector(".menu");
-    const nav = document.querySelector(".nav");
-
-    menu.onclick = function () {
-      menu.classList.toggle('close');
-      nav.classList.toggle('open');
-    }
-  </script>
+  <canvas></canvas>
+  <script src="script.js"></script>
 </body>
 
 </html>
