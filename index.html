@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UVCE ISE 26</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav>
+    <ul class="menu">
+      <li><a href="#userName" data-text="WELCOME TO UVCE ISE" id="userName"></a></li>
+      <li><a href="#home" data-text="HOME">HOME</a></li>
+      <li><a href="#fam" data-text="FAM">FAM</a></li>
+      <li><a href="#gallery" data-text="GALLERY">GALLERY</a></li>
+      <li><a href="#abtUvce" data-text="ABOUT UVCE">ABOUT UVCE</a></li>
+      <li><a href="#updates" data-text="UPDATES">UPDATES</a></li>
+      <li><a href="#achievements" data-text="ACHIEVEMENTS">ACHIEVEMENTS</a></li>
+      <li><a href="#contactUs" data-text="CONTACT US">CONTACT US</a></li><br></br>
+    </ul>
+    <input type="checkbox" role="button" aria-label="Display the menu" class="hamburger">
+  </nav>
+  <div id="container"> <span id="text1"></span> <span id="text2"></span> </div> <svg id="filters">
+    <defs>
+      <filter id="threshold">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 255 -140" />
+      </filter>
+    </defs>
+  </svg>
+  <div id="home">
+    <video src="video.mp4" autoplay muted id="myvideo" height="500px" width="auto">
+      <source src="video.mp4" type="video/mp4">
+    </video>
+    <b><span id="element" style="font-size: 100px; color: black; "></span></b>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed('#element', {
+        strings: ['Welcome to UVCE ISE FAM', 'Made By P=V<sup>2</sup>/R'],
+        typeSpeed: 40,
+        delete: 40,
+      });
+    </script>
+    <p>
+      Welcome to the UVCE ISE'26 Website hub! As the graduating class of 2026 from the Information Science and
+      Engineering department at UVCE, we're more than just a class - we're a community committed to holistic growth.
+    </p>
+    <p>
+      *Our Vision:* Beyond technology, we're dedicated to nurturing well-rounded professionals. We embrace a diverse
+      range of interests, from tech innovation to co-curricular excellence. With a strong foundation in tech, we're
+      driving innovation and exploring the frontiers of different spaces. Our achievements and projects showcase our
+      commitment to technical excellence. But our journey isn't confined only to code. We're passionate about
+      co-curricular activities, from sports to arts. Our events and achievements reflect a balanced approach to
+      education.
+    </p>
+
+    <p>
+      *Community and Connections:* Join us in our journey! As a community, we conduct engaging events that foster
+      collaboration and personal growth. We're proud to share the achievements of our class students - from winning
+      coding competitions to excelling in debates.Whether you're an alumnus, a prospective student, or a fellow tech
+      enthusiast, we invite you to join our network. Connect with us to stay updated on our tech advancements,
+      co-curricular successes, events, and more.
+    </p>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
