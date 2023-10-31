@@ -14,10 +14,39 @@ document.getElementById('userName').innerHTML = 'HELLO, ' + name;
 
 const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector(".menu");
+const homeLink = document.getElementById("homeLink");
+const home = document.getElementById("home");
+const famLink = document.getElementById("famLink");
+const fam = document.getElementById("fam");
+const galleryLink = document.getElementById("galleryLink");
+const gallery = document.getElementById("gallery");
+const abtUvceLink = document.getElementById("abtUvceLink");
+const abtUvce = document.getElementById("abtUvce");
+const updatesLink = document.getElementById("updatesLink");
+const updates = document.getElementById("updates");
+const achievementsLink = document.getElementById("achievementsLink");
+const achievements = document.getElementById("achievements");
+const contactUsLink = document.getElementById("contactUsLink");
+const contactUs = document.getElementById("contactUs");
 
 hamburger.onclick = function () {
     hamburger.classList.toggle('close');
     menu.classList.toggle('open');
+    home.classList.toggle('goDown');
+}
+
+const menuLink = [homeLink, famLink, galleryLink, abtUvceLink, updatesLink, achievementsLink, contactUsLink];
+const menuList = [home, fam, gallery, abtUvce, updates, achievements, contactUs];
+
+for (let i = 0; i < menuLink.length; i++) {
+    menuLink[i].addEventListener('mouseover', function() {
+        // Hide all menu items first
+        for (let j = 0; j < menuList.length; j++) {
+            menuList[j].style.display = "none";
+        }
+        // Display the corresponding menu item
+        menuList[i].style.display = "flex";
+    });
 }
 
 const elts = {
