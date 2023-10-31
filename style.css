@@ -89,7 +89,7 @@ nav {
 }
 
 .menu li:nth-child(6n + 3) a:before {
-    background: #1582fe;
+    background: #1682fe;
 }
 
 .menu li:nth-child(6n + 4) a:before {
@@ -181,7 +181,7 @@ nav {
 
 #container {
     position: absolute;
-    margin: auto;
+    margin-top: 200px;
     width: 100vw;
     height: 280px;
     top: 400px;
@@ -189,10 +189,9 @@ nav {
     filter: url(#threshold) blur(0.6px);
 }
 
-#text1,
-#text2 {
+#text1,#text2 {
     position: absolute;
-    color: #000;
+    color: #1682fe;
     width: 100%;
     display: inline-block;
     font-family: "Raleway", sans-serif;
@@ -201,20 +200,72 @@ nav {
     user-select: none;
 }
 
-.container,.text1,.text2{
-    display: block;
-}
-
-#home {
+#home{
     color: chocolate;
     align-items: center;
     display: flex;
     flex-direction: column;
-    text-align: justify;
     margin-left: 45px;
     margin-right: 45px;
     gap: 14px;
+    display: none;
 }
+
+#fam{
+    display: none;
+    flex-direction: column;
+    margin-left: 45px;
+    margin-right: 45px;
+    gap: 14px;
+    align-items: center;
+}
+
+#gallery{
+    display: none;
+    flex-direction: column;
+    margin-left: 45px;
+    margin-right: 45px;
+    gap: 14px;
+    align-items: center;
+}
+
+#abtUvce{
+    display: none;
+    flex-direction: column;
+    margin-left: 45px;
+    margin-right: 45px;
+    gap: 14px;
+    align-items: center;
+}
+
+#updates{
+    display: none;
+    flex-direction: column;
+    margin-left: 45px;
+    margin-right: 45px;
+    gap: 14px;
+    align-items: center;
+}
+
+#achievements{
+    display: none;
+    flex-direction: column;
+    margin-left: 45px;
+    margin-right: 45px;
+    gap: 14px;
+    align-items: center;
+}
+
+#contactUs{
+    display: none;
+    flex-direction: column;
+    margin-left: 45px;
+    margin-right: 45px;
+    gap: 14px;
+    align-items: center;
+}
+
+
 
 
 @media (max-width: 1104px) {
@@ -259,5 +310,13 @@ nav {
         letter-spacing: 0px;
         width: 800px;
         height: 1000px;
+    }
+    
+    #home.goDown{
+        margin-top: 450px;
+    }
+
+    #text1,#text2 {
+        font-size: 40pt;
     }
 }
